@@ -1,0 +1,17 @@
+.buttons-tab{
+    text-align: center; 
+    margin: 10px 0;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:5px;
+}
+
+.hidden-adv{
+    border: 1px solid black;
+    height: 700px;
+    display: none;
+    overflow-y: scroll;
+}
+html::-webkit-scrollbar {
+  display: none;
+}

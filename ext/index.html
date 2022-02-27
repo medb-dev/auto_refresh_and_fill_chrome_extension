@@ -1,0 +1,168 @@
+<html style="height: 350px; width: 400px">
+
+<head>
+    <link rel="stylesheet" href="../libs/bootstrap-5.1.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+
+<body style="height: 350px; width: 400px; background-color: F8F8F8;">
+    <header
+        style="background-color:white; overflow: hidden; position: fixed; top: 0; width: 100%; z-index: 99;">
+        <h3 class="float-md-start mb-0" style="display:block;text-align: center;margin: 0px auto; margin-bottom: 10px;">
+            Auto|Refresher|Filler</h3>
+    </header>
+
+    <div style="margin-top: 40px; margin-bottom: 20px; margin-left: 10px; margin-right: 10px;">
+        <!-- <br> -->
+        <hr>
+        <hr>
+        <div class="input-group input-group-sm mb-3" >
+            <span class="input-group-text" id="inputGroup-sizing-sm" style="display:block;width: 50%; text-align:center;">Refresh time in seconds</span>
+            <input type="number" id="refresh-time" class="form-control" aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+            <button class="btn" id="btn-start" 
+            style="padding: 0 10px; width: 95%; margin: 0 auto;
+            font-size: 1.6rem; letter-spacing: 0.2rem;
+            font-weight: 500;
+             color: white; background-color: rgb(24, 199, 141);
+             ">START</button>
+        </div>
+        <div class="input-group input-group-sm mb-3">
+            <button class="btn" id="btn-stop"
+            style="padding: 0 10px; width: 95%; margin: 0 auto;
+            font-size: 1.6rem; letter-spacing: 0.2rem;
+            font-weight: 500;
+             color: white; background-color: rgb(231, 25, 94);
+             ">STOP</button>
+        </div>
+        <div class="input-group input-group-sm mb-3">
+            <label for="toggle-advanced-options" class="input-group-text" id="inputGroup-sizing-sm"
+            style="display:block;width: 95%; text-align:center;letter-spacing: 0.1rem; margin:0 auto;">
+                <input type="checkbox" id="toggle-advanced-options" name="toggle-advanced-options" class="form-check-input" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" style="margin:5px 8px; line-height: 34px;"> Advanced Options</label>
+        </div>
+        <hr>
+        <hr>
+        <!-- <br> -->
+        <div id="advanced-options" class="hidden-adv">
+            <!-- Input fields -->
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
+                <input type="text" id="order_billing_name" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm">
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Email</span>
+                <input type="text" id="order_email" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm">
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Telephone</span>
+                <input type="text" id="order_tel" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm">
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Address 1</span>
+                <input type="text" id="order_billing_address" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm">
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Address 2</span>
+                <input type="text" id="order_billing_address_2" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm">
+            </div>
+
+
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">City</span>
+                <input type="text" id="order_billing_city" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm">
+
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">State</span>
+                <input type="text" id="order_billing_state" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm">
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Country</span>
+                <input type="text" id="order_billing_country" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm">
+            </div>
+
+                <span class="input-group-text" id="inputGroup-sizing-sm">Zip Code</span>
+                <input type="text" id="order_billing_zip" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm">
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Card Number</span>
+                <input type="text" id="credit_card_number" class="form-control"
+                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Expiry Month</span>
+                <input type="text" id="credit_card_month" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm">
+
+                <span class="input-group-text" id="inputGroup-sizing-sm">Expiry Year</span>
+                <input type="text" id="credit_card_year" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm">
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">CVV</span>
+                <input type="text" id="credit_card_verification_value" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm">
+            </div>
+
+            
+
+            <!-- Buttons -->
+            <div class="buttons-tab">
+                <!-- Auto fill -->
+                <button class="btn btn-primary" id="auto-fill">Auto Fill</button>
+            
+                <!-- Save fields -->
+                <button class="btn btn-primary" id="save">Save</button>
+            
+                <!-- Load fields -->
+                <button class="btn btn-primary" id="load">Load</button>
+
+                <!-- Reset fields -->
+                <button class="btn btn-primary" id="reset-fields">Clear</button>
+
+                <!-- Import Json File -->
+                <!-- <button class="btn btn-primary" onclick="document.getElementById('getFile').click()">Import</button>
+                
+                <input  type="file" 
+                        id="getFile" 
+                        name="getFile" 
+                        accept=".json,application/json"
+                        style="display:none" 
+                        onchange="getJsonFileName()"> -->
+                <!-- Export Json File -->
+                <!-- <button class="btn btn-primary" id="export">Export</button> -->
+            </div>
+            <div style="margin: 10px; color: white">
+                <br>
+                <br>
+            </div>
+        </div>
+
+    </div>
+    <div style="background-color:white; overflow: hidden; position: fixed; bottom: 0; width: 100%; z-index: 1; text-align:center;">
+        <p>&copy; all copyrights reserved - 2022</p>
+    </div>
+        <script src="./script.js"></script>
+</body>
+
+</html>
