@@ -77,7 +77,6 @@ auto_fill_btn.addEventListener("click", () => {
 });
 
 clear_btn.addEventListener("click", () => {
-	/* Reset extension form values */
 	order_name.value = '';
 	email.value = '';
 	telephone.value = '';
@@ -159,15 +158,6 @@ btn_start.addEventListener('click', ()=>{
             }
         },time_interval.value*1000);
     }
-    //chrome.tabs.reload()
-    //chrome.tabs.executeScript(tab.id, {code: 'window.location.reload();'});
-    // });
-    // chrome.tabs.getSelected(null, function(tab) {
-    //         var code = 'window.location.reload();';
-    //         chrome.tabs.executeScript(tab.id, {code: code});
-    //     })
-    // chrome.tabs.executeScript({code: 'console.log(`hit`)'});
-    //chrome.extension.getBackgroundPage().console.log(`${i} hit`);
 });
 
 btn_stop.addEventListener('click', ()=>{
@@ -250,21 +240,15 @@ function storageAvailable() {
     }
     catch(e) {
         return e instanceof DOMException && (
-            // everything except Firefox
             e.code === 22 ||
-            // Firefox
             e.code === 1014 ||
-            // test name field too, because code might not be present
-            // everything except Firefox
             e.name === 'QuotaExceededError' ||
-            // Firefox
             e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
-            // acknowledge QuotaExceededError only if there's something already stored
             (storage && storage.length !== 0);
         }
 }
 
-//  Only for testing :
+//  Only for Debuging :
 function getJsonFileName(){
     console.log(document.getElementById('getFile').files[0]);
     console.log(document.getElementById('getFile').value);
@@ -291,7 +275,7 @@ function getJsonFileName(){
     //   fetch('./', { 
     //     method: 'POST',
     //     headers: {
-    //     //   "Content-Type": "You will perhaps need to define a content-type here"
+    //     //   "Content-Type": "Personal Informations.."
     //     },
     //     body: file
     //   }).then(
